@@ -1,8 +1,9 @@
 //module to render
 import React from 'react'
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {solid} from '@fortawesome/fontawesome-svg-core/import.macro';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {solid} from '@fortawesome/fontawesome-svg-core/import.macro';
+
 
 function App() {
   return(
@@ -30,10 +31,10 @@ function App() {
             </div>
         </div>
         <div className="sidebar">
-        <FontAwesomeIcon icon={solid('search')} className='left-menu-icon' />
+        {/* <FontAwesomeIcon icon={solid('search')} className='left-menu-icon' />
         <FontAwesomeIcon icon={solid('house')} className='left-menu-icon' />
         <FontAwesomeIcon icon={solid('user')} className='left-menu-icon' />
-        <FontAwesomeIcon icon={solid('bookmark')} className='left-menu-icon' />
+        <FontAwesomeIcon icon={solid('bookmark')} className='left-menu-icon' /> */}
         </div>
         <div className="container">
           <div className='content-container'>
@@ -55,7 +56,50 @@ function App() {
                       </p>
                       <button className='movie-list-item-button'></button>
                     </div>
+                    <div className='movie-list-item'>
+                      <img src={require('./img/2.jpg')} alt='' className='movie-list-item-img'/>
+                      <p className='movie-list-item-desc'>
+                        Reprehenderit cupidatat eiusmod occaecat aute.
+                      </p>
+                      <button className='movie-list-item-button'></button>
+                    </div>
+                    <div className='movie-list-item'>
+                      <img src={require('./img/3.jpg')} alt='' className='movie-list-item-img'/>
+                      <p className='movie-list-item-desc'>
+                        Reprehenderit cupidatat eiusmod occaecat aute.
+                      </p>
+                      <button className='movie-list-item-button'></button>
+                    </div>
+                    <div className='movie-list-item'>
+                      <img src={require('./img/4.jpg')} alt='' className='movie-list-item-img'/>
+                      <p className='movie-list-item-desc'>
+                        Reprehenderit cupidatat eiusmod occaecat aute.
+                      </p>
+                      <button className='movie-list-item-button'></button>
+                    </div>
+                    <div className='movie-list-item'>
+                      <img src={require('./img/5.jpg')} alt='' className='movie-list-item-img'/>
+                      <p className='movie-list-item-desc'>
+                        Reprehenderit cupidatat eiusmod occaecat aute.
+                      </p>
+                      <button className='movie-list-item-button'></button>
+                    </div>
+                    <div className='movie-list-item'>
+                      <img src={require('./img/6.jpg')} alt='' className='movie-list-item-img'/>
+                      <p className='movie-list-item-desc'>
+                        Reprehenderit cupidatat eiusmod occaecat aute.
+                      </p>
+                      <button className='movie-list-item-button'></button>
+                    </div>
+                    <div className='movie-list-item'>
+                      <img src={require('./img/7.jpg')} alt='' className='movie-list-item-img'/>
+                      <p className='movie-list-item-desc'>
+                        Reprehenderit cupidatat eiusmod occaecat aute.
+                      </p>
+                      <button className='movie-list-item-button'></button>
+                    </div>
                   </div>
+
                 </div>
               </div>
           </div>
