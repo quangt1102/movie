@@ -1,7 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 function Movielist(){
+  const [isactive,setactive]= useState(false);
+  const isact = () => {
+    if(isactive === true)
+      setactive(false);
+    else
+      setactive(true);
+  }
     var aitem = [{ item: '1', title: 'Her' },
   { item: '2', title: 'Star Wars' },
   { item: '3', title: 'Storm' },
@@ -16,30 +23,31 @@ function Movielist(){
   { item: '12', title: 'Avengers' },
   { item: '1', title: 'Her' },
   { item: '1', title: 'Her' }];
-  const arrows = document.querySelectorAll(".arrow");
-  const movieLists = document.querySelectorAll(".movie-list");
-  arrows.forEach((arrow, i) => {
-    const itemNumber = movieLists[i].querySelectorAll("img").length;
-    let clickCounter = 0;
-    arrow.addEventListener("click", () => {
-      const ratio = Math.floor(window.innerWidth / 270);
-      clickCounter++;
-      if (itemNumber - (4 + clickCounter) + (4 - ratio) >= 0) {
-        movieLists[i].style.transform = `translateX(${
-          movieLists[i].computedStyleMap().get("transform")[0].x.value - 300
-        }px)`;
-      } else {
-        movieLists[i].style.transform = "translateX(0)";
-        clickCounter = 0;
-      }
-    });
+  // const arrows = document.querySelectorAll(".arrow");
+  // const movieLists = document.querySelectorAll(".movie-list");
+  // arrows.forEach((arrow, i) => {
+  //   const itemNumber = movieLists[i].querySelectorAll("img").length;
+  //   let clickCounter = 0;
+  //   arrow.addEventListener("click", () => {
+  //     const ratio = Math.floor(window.innerWidth / 270);
+  //     clickCounter++;
+  //     if (itemNumber - (4 + clickCounter) + (4 - ratio) >= 0) {
+  //       movieLists[i].style.transform = `translateX(${
+  //         movieLists[i].computedStyleMap().get("transform")[0].x.value - 300
+  //       }px)`;
+  //     } else {
+  //       movieLists[i].style.transform = "translateX(0)";
+  //       clickCounter = 0;
+  //     }
+  //   });
   
-    console.log(Math.floor(window.innerWidth / 270));
-  });
+  //   console.log(Math.floor(window.innerWidth / 270));
+  // });
+  
   return(
     <div>
         <div className='movie-list-container'>
-          <h1 className='movie-list-title'>NEW RELEASES</h1>
+          <h1 onChange={isact} className={`movie-list-title${isactive ? ' active':''}`}>NEW RELEASES</h1>
           <div className='movie-list-wrapper'>
             <div className='movie-list'>
               {
@@ -60,7 +68,7 @@ function Movielist(){
         </div>
 
         <div className='movie-list-container'>
-          <h1 className='movie-list-title'>NEW RELEASES</h1>
+        <h1 onChange={isact} className={`movie-list-title${isactive ? ' active':''}`}>NEW RELEASES</h1>
           <div className='movie-list-wrapper'>
             <div className='movie-list'>
               {

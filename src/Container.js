@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import './Container.css';
 import Movielist from "./Movielist";
 function Container() {
+  const [isactive,setactive]=useState(false);
+  const isact = () => {
+    if(isactive === true)
+      setactive(false);
+    else
+      setactive(true);
+  }
   return (
-    <div className="container">
+    <div onClick={isact} className={`container${isactive ? ' active':''}`}>
       <div className='content-container'>
         <div className='featured-content'>
           <img className='featured-title' src='img/f-t-1.png' alt='' />

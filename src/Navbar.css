@@ -81,4 +81,15 @@
     border-radius: 50%;
     cursor: pointer;
     transition: 1s ease all;
+  }  
+  .toggle.active{
+    background-color: black;
+  }  
+  .toggle-ball.active{
+    background-color: white;
+    transform: translateX(-20px);
+  }
+  .navbar-container.active {
+    background-color: white;
+    color: black;
   }

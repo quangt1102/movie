@@ -16,4 +16,10 @@
     font-size: 20px;
     margin-bottom: 40px;
   }
-  
+  .sidebar.active{
+    background-color: white;
+  }
+
+  .left-menu-icon.active{
+    color: black;
+  }

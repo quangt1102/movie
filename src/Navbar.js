@@ -1,24 +1,23 @@
-import React from "react";
+
+import React,{useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCaretDown,faMoon,faSun} from '@fortawesome/free-solid-svg-icons';
-import './Navbar.css'
-function navbar(){
-  //TOGGLE
+import './Navbar.css';
 
-const ball = document.querySelector(".toggle-ball");
-const items = document.querySelectorAll(
-  ".container,.movie-list-title,.navbar-container,.sidebar,.left-menu-icon,.toggle"
-);
+const Navbar=(props)=>{
+  
+  const [isactive,setactive] = useState(false);
+  const isact = () =>{
+    if(isactive)
+      setactive(false);
+    else{
+      setactive(true);
+    }
+  }
 
-ball.addEventListener("click", () => {
-  items.forEach((item) => {
-    item.classList.toggle("active");
-  });
-  ball.classList.toggle("active");
-});
-    return(
+  return(
         <div className="navbar">
-            <div className="navbar-container">
+            <div onChange={isact} className={`navbar-container${isactive ? ' active':""}`}>
               <div className="logo-container">
                 <h1 className="logo">Phimmoi</h1>
               </div>
@@ -38,14 +37,18 @@ ball.addEventListener("click", () => {
                   <span className="profile-text">Profile</span>
                   <FontAwesomeIcon icon={faCaretDown} />
                 </div>
-                <div className="toggle">
+                <div onChange={isact} className={`toggle${isactive ? ' active':""}`}>
                   <FontAwesomeIcon icon={faMoon} className='toggle-icon'/>
                   <FontAwesomeIcon icon={faSun} className='toggle-icon'/>
-                  <div className="toggle-ball"></div>
+                  <div onClick={isact} className={`toggle-ball${isactive ? ' active':""}`}></div>
+                  
                 </div>
               </div>
             </div>
         </div>
     );
+    
 }
-export default navbar;
+
+// export var STATE= Navbar.props.isactive;
+export default Navbar;
